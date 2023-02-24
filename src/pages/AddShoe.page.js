@@ -7,10 +7,11 @@ const AddShoe = () => {
     <div>
       <Navbar />
       <h2>Add a new shoe</h2>
-      <ShoeForm />
-      <button className="add-shoe-btn" type="submit">
-        Add
-      </button>
+      <ShoeForm>
+        <button className="add-shoe-btn" type="submit">
+          Add
+        </button>
+      </ShoeForm>
     </div>
   );
 };
