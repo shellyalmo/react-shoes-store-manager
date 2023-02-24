@@ -24,18 +24,21 @@ export const createAPI = async (shoeName, shoePrice, shoeImg) => {
   }
 };
 
-export const readAPI = async () => {
+export const readShoesList = async () => {
   try {
     const config = {
       method: "get",
-      url: "https://63f658b1ab76703b15bdb686.mockapi.io/shoes",
       headers: {},
     };
 
-    const response = await axios(config);
-    return response.data;
+    const response = await fetch(
+      "https://63f658b1ab76703b15bdb686.mockapi.io/shoes",
+      config
+    );
+    return await response.json();
   } catch (error) {
     console.log(error);
+    return [];
   }
 };
 
