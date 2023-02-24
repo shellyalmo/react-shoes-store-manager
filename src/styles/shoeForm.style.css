@@ -1,4 +1,8 @@
-.new-show-form {
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+.new-shoe-form {
   text-align: left;
   display: flex;
   flex-direction: column;

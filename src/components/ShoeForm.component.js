@@ -2,11 +2,11 @@ import React from "react";
 import "../styles/shoeForm.style.css";
 const ShoeForm = () => {
   return (
-    <div>
-      <form className="new-show-form">
-        <label for="shoename">Shoe Brand Name:</label>
+    <div className="form-container">
+      <form className="new-shoe-form">
+        <label for="shoename">Brand Name:</label>
         <input type="text" id="shoename" name="shoename" required />
-        <label for="shoeprice">Shoe Price:</label>
+        <label for="shoeprice">Price:</label>
         <input
           type="number"
           min="1"
@@ -15,7 +15,7 @@ const ShoeForm = () => {
           name="shoeprice"
           required
         />
-        <label for="shoeimg">Shoe Image Url:</label>
+        <label for="shoeimg">Image Url:</label>
         <input type="text" id="shoeimg" name="shoeimg" required />
       </form>
     </div>
