@@ -3,12 +3,16 @@ import Navbar from "../components/Navbar.component";
 import ShoeForm from "../components/ShoeForm.component";
 
 const AddShoe = () => {
-  return <div>
-    <Navbar/>
-    AddShoe
-    <ShoeForm/>
-
-  </div>;
+  return (
+    <div>
+      <Navbar />
+      <h2>Add a new shoe</h2>
+      <ShoeForm />
+      <button className="add-shoe-btn" type="submit">
+        Add
+      </button>
+    </div>
+  );
 };
 
 export default AddShoe;

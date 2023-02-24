@@ -1,0 +1,33 @@
+.new-show-form {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+}
+
+.add-shoe-btn,
+.update-shoe-btn,
+.cancel-shoe-btn,
+.delete-shoe-btn {
+  border: none;
+  color: white;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 1rem 1rem;
+  cursor: pointer;
+}
+.add-shoe-btn {
+  background-color: #4caf50;
+}
+.update-shoe-btn {
+  background-color: #008cba;
+}
+.cancel-shoe-btn {
+  background-color: #555555;
+}
+.delete-shoe-btn {
+  background-color: #f44336;
+}
