@@ -1,4 +1,4 @@
-ul {
+.menu ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -8,12 +8,12 @@ ul {
   background-color: #a87c4f;
 }
 
-a {
+.menu a {
   font-size: 1.3rem;
   color: white;
   cursor: pointer;
   text-decoration: none;
 }
-a:hover {
+.menu a:hover {
   color: #bdbdbf;
 }
