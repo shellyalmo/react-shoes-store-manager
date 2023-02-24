@@ -4,13 +4,13 @@ import Homepage from "./pages/Homepage.page";
 import Shoes from "./pages/Shoes.page";
 import EditShoe from "./pages/EditShoe.page";
 import AddShoe from "./pages/AddShoe.page";
-import { readShoesList } from "./api/api";
+import { readShoesList, createShoe } from "./api/api";
 
 const router = createBrowserRouter([
   { path: "/", element: <Homepage /> },
   { path: "/shoes", element: <Shoes />, loader: readShoesList },
   { path: "/:shoeid", element: <EditShoe /> },
-  { path: "/shoes/add", element: <AddShoe /> },
+  { path: "/shoes/add", element: <AddShoe />, action: createShoe },
 ]);
 
 function App() {

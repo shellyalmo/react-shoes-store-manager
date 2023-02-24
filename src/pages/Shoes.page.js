@@ -5,22 +5,27 @@ import { useLoaderData } from "react-router-dom";
 import "../styles/shoespage.style.css";
 import "../styles/spinner.css";
 const Shoes = () => {
-  const shoes = useLoaderData();
+  const { shoes } = useLoaderData();
+
   return (
     <div>
       <Navbar />
       <div className="shoes-container">
-        {shoes.map((shoe) => {
-          return (
-            <ShoeCard
-              key={shoe.id}
-              id={shoe.id}
-              name={shoe.name}
-              price={shoe.price}
-              image={shoe.image}
-            />
-          );
-        })}
+        {shoes instanceof Array ? (
+          shoes.map((shoe) => {
+            return (
+              <ShoeCard
+                key={shoe.id}
+                id={shoe.id}
+                name={shoe.name}
+                price={shoe.price}
+                image={shoe.image}
+              />
+            );
+          })
+        ) : (
+          <ShoeCard loading={true} />
+        )}
       </div>
     </div>
   );

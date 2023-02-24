@@ -1,7 +1,18 @@
 import axios from "axios";
 
-export const createAPI = async (shoeName, shoePrice, shoeImg) => {
+export const createShoe = async ({ request }) => {
   try {
+    let formData = await request.formData();
+    let shoeName = formData.get("shoename");
+    let shoePrice = +formData.get("shoeprice");
+    let shoeImg = formData.get("shoeimg");
+    if (
+      typeof shoeName !== "string" ||
+      typeof shoePrice !== "number" ||
+      typeof shoeImg !== "string"
+    ) {
+      throw new Error("invalid shoe data");
+    }
     const data = JSON.stringify({
       name: shoeName,
       price: shoePrice,
@@ -35,10 +46,15 @@ export const readShoesList = async () => {
       "https://63f658b1ab76703b15bdb686.mockapi.io/shoes",
       config
     );
-    return await response.json();
+    const json = await response.json();
+    if (json instanceof Array) {
+      return { shoes: json };
+    } else {
+      throw new Error("not arr!");
+    }
   } catch (error) {
     console.log(error);
-    return [];
+    return { shoes: [] };
   }
 };
 
