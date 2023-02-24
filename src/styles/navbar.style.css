@@ -1,0 +1,19 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  background-color: #a87c4f;
+
+  color: white;
+  font-size: 1.3rem;
+}
+
+li {
+  cursor: pointer;
+}
+li:hover {
+  color: #bdbdbf;
+}
