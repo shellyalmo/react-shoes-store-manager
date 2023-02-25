@@ -29,7 +29,7 @@ export const createShoe = async ({ request }) => {
       data: data,
     };
 
-    const response = await axios(config);
+    await axios(config);
     return redirect(`/shoes`);
   } catch (error) {
     console.log(error);
@@ -88,7 +88,7 @@ export const updateShoe = async ({ request, params }) => {
       data: data,
     };
 
-    const response = await axios(config);
+    await axios(config);
     return redirect(`/shoes`);
   } catch (error) {
     console.log(error);
@@ -96,7 +96,7 @@ export const updateShoe = async ({ request, params }) => {
   }
 };
 
-export const deleteAPI = async (shoeId) => {
+export const deleteShoe = async (shoeId) => {
   try {
     const config = {
       method: "delete",
@@ -104,8 +104,7 @@ export const deleteAPI = async (shoeId) => {
       headers: {},
     };
 
-    const response = await axios(config);
-    return response.data;
+    await axios(config);
   } catch (error) {
     console.log(error);
   }
