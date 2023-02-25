@@ -12,7 +12,7 @@ const ShoeForm = ({ shoe, children }) => {
           id="shoename"
           name="shoename"
           required={true}
-          defaultValue={shoe.name}
+          defaultValue={shoe?.name} //Optional chaining (?.)
         />
         <label htmlFor="shoeprice">Price:</label>
         <input
@@ -21,7 +21,7 @@ const ShoeForm = ({ shoe, children }) => {
           step="any"
           id="shoeprice"
           name="shoeprice"
-          defaultValue={shoe.price}
+          defaultValue={shoe?.price}
           required
         />
         <label htmlFor="shoeimg">Image Url:</label>
@@ -30,7 +30,7 @@ const ShoeForm = ({ shoe, children }) => {
           id="shoeimg"
           name="shoeimg"
           required
-          defaultValue={shoe.image}
+          defaultValue={shoe?.image}
         />
         {children}
       </Form>
