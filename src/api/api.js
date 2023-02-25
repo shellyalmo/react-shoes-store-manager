@@ -32,6 +32,7 @@ export const createShoe = async ({ request }) => {
     return response.data;
   } catch (error) {
     console.log(error);
+    return error;
   }
 };
 
@@ -58,7 +59,7 @@ export const readShoesList = async () => {
   }
 };
 
-export const updateShoe = async ({ request }) => {
+export const updateShoe = async ({ request, params }) => {
   try {
     let formData = await request.formData();
     let shoeName = formData.get("shoename");
@@ -79,7 +80,7 @@ export const updateShoe = async ({ request }) => {
 
     const config = {
       method: "put",
-      url: `https://63f658b1ab76703b15bdb686.mockapi.io/shoes/${request}`,
+      url: `https://63f658b1ab76703b15bdb686.mockapi.io/shoes/${params.shoeid}`,
       headers: {
         "Content-Type": "application/json",
       },
@@ -90,6 +91,7 @@ export const updateShoe = async ({ request }) => {
     return response.data;
   } catch (error) {
     console.log(error);
+    return error;
   }
 };
 
