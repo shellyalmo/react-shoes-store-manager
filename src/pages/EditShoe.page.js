@@ -16,10 +16,10 @@ const EditShoe = () => {
         <button className="update-shoe-btn" type="submit">
           Update Shoe
         </button>
-        <button className="cancel-shoe-btn" type="submit">
+        <button className="cancel-shoe-btn" type="button">
           Cancel
         </button>
-        <button className="delete-shoe-btn" type="submit">
+        <button className="delete-shoe-btn" type="button">
           Delete Shoe
         </button>
       </ShoeForm>

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { redirect } from "react-router-dom";
 
 export const createShoe = async ({ request }) => {
   try {
@@ -29,7 +30,7 @@ export const createShoe = async ({ request }) => {
     };
 
     const response = await axios(config);
-    return response.data;
+    return redirect(`/shoes`);
   } catch (error) {
     console.log(error);
     return error;
@@ -88,7 +89,7 @@ export const updateShoe = async ({ request, params }) => {
     };
 
     const response = await axios(config);
-    return response.data;
+    return redirect(`/shoes`);
   } catch (error) {
     console.log(error);
     return error;
