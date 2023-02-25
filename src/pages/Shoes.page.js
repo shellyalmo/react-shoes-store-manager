@@ -21,6 +21,7 @@ const Shoes = () => {
                 name={shoe.name}
                 price={shoe.price}
                 image={shoe.image}
+                loading={false}
               />
             );
           })

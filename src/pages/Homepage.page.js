@@ -1,10 +1,18 @@
 import React from "react";
+import { useNavigation } from "react-router-dom";
 import Navbar from "../components/Navbar.component";
 import storeLogo from "../assets/shoes-logo.jpg";
 import "../styles/homepage.style.css";
+import "../styles/spinner.css";
 
 const Homepage = () => {
-  return (
+  const navigation = useNavigation();
+
+  return navigation.state === "loading" ? (
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <div className="spinner"></div>
+    </div>
+  ) : (
     <div>
       <Navbar />
       <div className="background-container">
