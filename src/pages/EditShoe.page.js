@@ -1,11 +1,12 @@
 import React from "react";
 import ShoeForm from "../components/ShoeForm.component";
 import Navbar from "../components/Navbar.component";
-import { useParams, useLoaderData, Link } from "react-router-dom";
+import { useParams, useLoaderData, useNavigate } from "react-router-dom";
 
 const EditShoe = () => {
   let { shoeid } = useParams();
   const { shoes } = useLoaderData();
+  const navigate = useNavigate();
   const shoe = shoes.find((shoe) => shoe.id === shoeid);
   return (
     <div>
@@ -16,8 +17,12 @@ const EditShoe = () => {
         <button className="update-shoe-btn" type="submit">
           Update Shoe
         </button>
-        <button className="cancel-shoe-btn" type="button">
-          <Link to="/shoes">Cancel</Link>
+        <button
+          className="cancel-shoe-btn"
+          onClick={() => navigate("/shoes")}
+          type="button"
+        >
+          Cancel
         </button>
         <button className="delete-shoe-btn" type="button">
           Delete Shoe
