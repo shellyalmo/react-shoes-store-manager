@@ -16,8 +16,12 @@ const Homepage = () => {
     <div>
       <Navbar />
       <div className="background-container">
-        <img className="background-img" src={storeLogo} alt="" />
-        <h3>Welcome to the Shoes Store Manager.</h3>{" "}
+        <header>
+          <h3>Welcome to the Shoes Store Manager.</h3>{" "}
+        </header>
+        <figure>
+          <img className="background-img" src={storeLogo} alt="" />
+        </figure>
         <p>
           {" "}
           The online platform for store managers to view their shoes inventory,

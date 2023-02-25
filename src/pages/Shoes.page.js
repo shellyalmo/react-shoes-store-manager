@@ -9,9 +9,12 @@ const Shoes = () => {
   const { shoes } = useLoaderData();
 
   return (
-    <div>
+    <>
       <Navbar />
-      <div className="shoes-container">
+
+      <h2>All Shoes</h2>
+
+      <section>
         {shoes instanceof Array ? (
           shoes.map((shoe) => {
             return (
@@ -28,8 +31,8 @@ const Shoes = () => {
         ) : (
           <ShoeCard loading={true} />
         )}
-      </div>
-    </div>
+      </section>
+    </>
   );
 };
 

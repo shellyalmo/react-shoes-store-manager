@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const ShoeCard = ({ id, name, price, image, loading }) => {
   return (
-    <div className="shoe-card">
+    <aside className="shoe-card">
       {!loading ? (
         <Link to={`/${id}`}>
           <div>
@@ -17,7 +17,7 @@ const ShoeCard = ({ id, name, price, image, loading }) => {
       ) : (
         <div className="spinner">Loading</div>
       )}
-    </div>
+    </aside>
   );
 };
 
