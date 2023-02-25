@@ -4,6 +4,7 @@ import ShoeCard from "../components/ShoeCard.component";
 import { useLoaderData } from "react-router-dom";
 import "../styles/shoespage.style.css";
 import "../styles/spinner.css";
+
 const Shoes = () => {
   const { shoes } = useLoaderData();
 

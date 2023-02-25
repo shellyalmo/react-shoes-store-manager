@@ -1,15 +1,18 @@
 import React from "react";
 import ShoeForm from "../components/ShoeForm.component";
 import Navbar from "../components/Navbar.component";
-import { useParams } from "react-router-dom";
+import { useParams, useLoaderData } from "react-router-dom";
 
 const EditShoe = () => {
   let { shoeid } = useParams();
+  const { shoes } = useLoaderData();
+  const shoe = shoes.find((shoe) => shoe.id === shoeid);
   return (
     <div>
       <Navbar />
       <h2>Edit Shoe {shoeid}</h2>
-      <ShoeForm>
+
+      <ShoeForm shoe={shoe}>
         <button className="update-shoe-btn" type="submit">
           Update Shoe
         </button>

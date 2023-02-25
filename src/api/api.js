@@ -58,15 +58,28 @@ export const readShoesList = async () => {
   }
 };
 
-export const updateAPI = async (shoeId, taskStatus) => {
+export const updateShoe = async ({ request }) => {
   try {
+    let formData = await request.formData();
+    let shoeName = formData.get("shoename");
+    let shoePrice = +formData.get("shoeprice");
+    let shoeImg = formData.get("shoeimg");
+    if (
+      typeof shoeName !== "string" ||
+      typeof shoePrice !== "number" ||
+      typeof shoeImg !== "string"
+    ) {
+      throw new Error("invalid shoe data");
+    }
     const data = JSON.stringify({
-      complete: taskStatus,
+      name: shoeName,
+      price: shoePrice,
+      image: shoeImg,
     });
 
     const config = {
       method: "put",
-      url: `https://63f658b1ab76703b15bdb686.mockapi.io/shoes/${shoeId}`,
+      url: `https://63f658b1ab76703b15bdb686.mockapi.io/shoes/${request}`,
       headers: {
         "Content-Type": "application/json",
       },
