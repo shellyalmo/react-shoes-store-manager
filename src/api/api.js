@@ -96,11 +96,11 @@ export const updateShoe = async ({ request, params }) => {
   }
 };
 
-export const deleteShoe = async (shoeId) => {
+export const deleteShoe = async (shoeid) => {
   try {
     const config = {
       method: "delete",
-      url: `https://63f658b1ab76703b15bdb686.mockapi.io/shoes/${shoeId}`,
+      url: `https://63f658b1ab76703b15bdb686.mockapi.io/shoes/${shoeid}`,
       headers: {},
     };
 

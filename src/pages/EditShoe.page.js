@@ -2,9 +2,10 @@ import React from "react";
 import ShoeForm from "../components/ShoeForm.component";
 import Navbar from "../components/Navbar.component";
 import { useParams, useLoaderData, useNavigate } from "react-router-dom";
+import { deleteShoe } from "../api/api";
 
 const EditShoe = () => {
-  let { shoeid } = useParams();
+  const { shoeid } = useParams();
   const { shoes } = useLoaderData();
   const navigate = useNavigate();
   const shoe = shoes.find((shoe) => shoe.id === shoeid);
@@ -24,7 +25,14 @@ const EditShoe = () => {
         >
           Cancel
         </button>
-        <button className="delete-shoe-btn" type="button">
+        <button
+          className="delete-shoe-btn"
+          type="button"
+          onClick={async () => {
+            await deleteShoe(shoeid);
+            navigate("/shoes");
+          }}
+        >
           Delete Shoe
         </button>
       </ShoeForm>
