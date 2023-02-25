@@ -1,7 +1,7 @@
 import React from "react";
 import ShoeForm from "../components/ShoeForm.component";
 import Navbar from "../components/Navbar.component";
-import { useParams, useLoaderData } from "react-router-dom";
+import { useParams, useLoaderData, Link } from "react-router-dom";
 
 const EditShoe = () => {
   let { shoeid } = useParams();
@@ -17,7 +17,7 @@ const EditShoe = () => {
           Update Shoe
         </button>
         <button className="cancel-shoe-btn" type="button">
-          Cancel
+          <Link to="/shoes">Cancel</Link>
         </button>
         <button className="delete-shoe-btn" type="button">
           Delete Shoe

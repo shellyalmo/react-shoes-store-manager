@@ -23,6 +23,10 @@
   margin: 1rem 1rem;
   cursor: pointer;
 }
+.cancel-shoe-btn a {
+  color: white;
+  text-decoration: none;
+}
 .add-shoe-btn {
   background-color: #4caf50;
 }
